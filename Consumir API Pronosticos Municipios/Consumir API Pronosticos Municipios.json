@@ -1,0 +1,39 @@
+{
+  "name" : "Consumir API Pronosticos Municipios",
+  "description" : "",
+  "role" : "arn:aws:iam::497037598026:role/AWSGlueStudioRole",
+  "executionProperty" : {
+    "maxConcurrentRuns" : 1
+  },
+  "command" : {
+    "name" : "glueetl",
+    "scriptLocation" : "s3://aws-glue-assets-497037598026-us-east-1/scripts/Consumir API Pronosticos Municipios.py",
+    "pythonVersion" : "3"
+  },
+  "defaultArguments" : {
+    "--enable-metrics" : "true",
+    "--enable-spark-ui" : "true",
+    "--extra-py-files" : "s3://aws-glue-assets-497037598026-us-east-1/glue-libs/spark-jobs/slack_sdk-3.20.2-py2.py3-none-any.whl",
+    "--spark-event-logs-path" : "s3://aws-glue-assets-497037598026-us-east-1/sparkHistoryLogs/",
+    "--enable-job-insights" : "false",
+    "--enable-glue-datacatalog" : "true",
+    "--enable-continuous-cloudwatch-log" : "true",
+    "--job-bookmark-option" : "job-bookmark-disable",
+    "--job-language" : "python",
+    "--TempDir" : "s3://aws-glue-assets-497037598026-us-east-1/temporary/"
+  },
+  "maxRetries" : 0,
+  "allocatedCapacity" : 2,
+  "timeout" : 2880,
+  "maxCapacity" : 2.0,
+  "glueVersion" : "4.0",
+  "numberOfWorkers" : 2,
+  "workerType" : "G.1X",
+  "executionClass" : "STANDARD",
+  "sourceControlDetails" : {
+    "provider" : "GITHUB",
+    "repository" : "aws-glue-consumir-API-pronosticos-municipios",
+    "branch" : "main",
+    "folder" : "Consumir API Pronosticos Municipios"
+  }
+}
